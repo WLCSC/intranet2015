@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reference.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @reference.url %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @reference.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @reference.password %>
+</p>
+
+<p>
+  <strong>External:</strong>
+  <%= @reference.external %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @reference.notes %>
+</p>
+
+<%= link_to 'Edit', edit_reference_path(@reference) %> |
+<%= link_to 'Back', references_path %>

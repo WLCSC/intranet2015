@@ -24,6 +24,7 @@
     <%= select_tag(:menu_id, options_from_collection_for_select(Menu.all, 'id', 'title', @menu.menu_id), :include_blank => true) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br>
+    <%= f.submit nil, class: "btn btn-success btn-sm"%>
   </div>
 <% end %>

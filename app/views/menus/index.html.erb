@@ -2,29 +2,9 @@
 
 <h1>Listing Menus</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th>Menu</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @menus.each do |menu| %>
-      <tr>
-        <td><%= menu.title %></td>
-        <td><%= menu.url %></td>
-        <td><%= menu.menu_id %></td>
-        <td><%= link_to 'Show', menu %></td>
-        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-        <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <ul><%= render partial: 'tree', locals: {x:menu} %></ul>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 

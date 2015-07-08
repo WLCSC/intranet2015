@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Url</th>
       <th>Username</th>
       <th>Password</th>
       <th>External</th>
@@ -18,8 +17,7 @@
   <tbody>
     <% @references.each do |reference| %>
       <tr>
-        <td><%= reference.title %></td>
-        <td><%= reference.url %></td>
+        <td><%= link_to reference.title, reference.url  %></td>
         <td><%= reference.username %></td>
         <td><%= reference.password %></td>
         <td><%= reference.external %></td>

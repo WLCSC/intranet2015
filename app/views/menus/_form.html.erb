@@ -16,7 +16,7 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
+    <%= f.label :url, 'URL' %><br>
     <%= f.text_field :url %>
   </div>
   <div class="field">
@@ -24,7 +24,7 @@
     <%= select_tag(:menu_id, options_from_collection_for_select(Menu.all, 'id', 'title', @menu.menu_id), :include_blank => true) %>
   </div>
   <div class="actions">
-    <br>
-    <%= f.submit nil, class: "btn btn-success btn-sm"%>
+    <br><br>
+    <%= f.submit nil, class: "btn btn-success"%>
   </div>
 <% end %>

@@ -1,10 +1,10 @@
 <li>
 <%= link_to x.title, x, class: "btn btn-link" %>
-</li>
 <% if x.children.count > 0 %>
-  <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapse-<%= x.id %>">
+  <button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapse-<%= x.id %>">
   Expand <%= x.title %>
   </button>
+  </li>
   <div id = "collapse-<%= x.id %>" class="collapse">
   <ul>
 <% x.children.each do |y| %>

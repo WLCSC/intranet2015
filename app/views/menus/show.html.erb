@@ -12,7 +12,7 @@
 
 <p>
   <strong>Menu:</strong>
-  <%= @menu.menu_id %>
+  <%= @menu.parent_id ? @menu.parent.title : "No menu" %>
 </p>
 
 <%= link_to 'Edit', edit_menu_path(@menu), class: "btn btn-warning"  %>

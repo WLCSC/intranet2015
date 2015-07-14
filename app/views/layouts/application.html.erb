@@ -8,9 +8,8 @@
 </head>
 <body>
 
- 
 <%= navbar do %>
-			<%= navbar_header brand: "Intranet", brand_link: root_url %>
+			<%= navbar_header brand: "Intranet " + image_tag("WL Logo Check pattern-small", height: "25px", style: "display: inline"), brand_link: root_url %>
 			<%= navbar_collapse do %>
 				<%= navbar_group class: "foo", id: "menu" do %>
 					<% Menu.where(menu_id: nil).order(:title).each do |menu| %>
@@ -23,6 +22,8 @@
 				<% end %>
 			<% end %>
 		<% end %>
+<div class="container">
 <%= yield %>
+</div>
 </body>
 </html>

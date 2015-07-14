@@ -12,5 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  */
 @import "bootstrap";
+
+table {
+  border-spacing: 10px;
+  border-collapse: separate;
+}

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @note.content %>
+  <strong>Title:</strong>
+  <%= @note.title %>
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @note.title %>
+  <strong>Content:</strong>
+  <%= @note.content %>
 </p>
 
 <p>
@@ -17,8 +17,8 @@
 
 <p>
   <strong>Expires:</strong>
-  <%= @note.expires %>
+  <%= @note.expires.strftime("%b %d, %Y") %>
 </p>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<%= link_to 'Edit', edit_note_path(@note), class: "btn btn-warning" %>
+<%= link_to 'Back', notes_path, class: "btn btn-primary" %>

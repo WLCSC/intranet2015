@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require jquery-ui
+$(function (){
+  $('#note_expires').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});

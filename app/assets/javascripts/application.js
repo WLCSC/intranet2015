@@ -16,7 +16,7 @@
 //= require_tree .
 //= require bootstrap
 //= require jquery-ui
-$(function (){
+$(document).on("ready page:load", function (){
   $('#note_expires').datepicker({
     dateFormat: "yy-mm-dd"
   });

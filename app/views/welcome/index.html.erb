@@ -1,2 +1,14 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<% Time.zone = 'EST' %>
+<h1><center>Welcome to the WLCSC Intranet!</center></h1>
+<br>
+<br>
+<h2><center><strong>Notes</strong></center></h2>
+<% @notes.each do |note| %>
+  <center><h3><%= note.title %></h3></center>
+  <% if note.created_at == note.updated_at %>
+    <center><h4>Created by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.created_at.strftime("%b %d, %Y at %I:%M %p") %></h4></center>
+  <% else %>
+    <center><h4>Updated by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.updated_at.strftime("%b %d, %Y at %I:%M %p") %></h4></center>
+  <% end %>
+  <p><%= note.content %></p>
+<% end %>

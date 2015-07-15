@@ -1,14 +1,23 @@
-<% Time.zone = 'EST' %>
+<% Time.zone = 'Indiana (East)' %>
 <h1><center>Welcome to the WLCSC Intranet!</center></h1>
 <br>
-<br>
 <h2><center><strong>Notes</strong></center></h2>
-<% @notes.each do |note| %>
-  <center><h3><%= note.title %></h3></center>
-  <% if note.created_at == note.updated_at %>
-    <center><h4>Created by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.created_at.strftime("%b %d, %Y at %I:%M %p") %></h4></center>
-  <% else %>
-    <center><h4>Updated by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.updated_at.strftime("%b %d, %Y at %I:%M %p") %></h4></center>
+<br>
+<% @notes.in_groups_of(3) do |thing| %>
+<div class = "row">
+  <% thing.each do |note| %>
+    <% if note != nil %>
+      <div class = "col-md-4">
+      <center><h4><%= note.title %></h4></center>
+      <% if note.created_at == note.updated_at %>
+        <center><h5>Created by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.created_at.strftime("%b %d, %Y at %I:%M %p") %></h5></center>
+      <% else %>
+        <center><h5>Updated by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.updated_at.strftime("%b %d, %Y at %I:%M %p") %></h5></center>
+      <% end %>
+      <p><%= note.content %></p>
+    </div>
+    <% end %>
   <% end %>
-  <p><%= note.content %></p>
+</div>
 <% end %>
+<h2><center><strong>References</strong></center></h2>

@@ -7,7 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <%= navbar inverse: true  do %>
 			<%= navbar_header brand: "Intranet " + image_tag("WL_Logo", height: "25px", style: "display: inline"), brand_link: root_url %>
 			<%= navbar_collapse do %>
@@ -23,6 +22,11 @@
 			<% end %>
 		<% end %>
 <div class="container">
+<% @notes_stuff.each do |x| %>
+  <% if x.expires < DateTime.now %>
+    <% x.destroy %>
+  <% end %>
+<% end %>
 <%= yield %>
 </div>
 </body>

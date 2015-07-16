@@ -1,1 +1,11 @@
 <p id="notice"><%= notice %></p>
+
+<h1>Menu</h1>
+
+    <% @menus.each do |menu| %>
+        <ul><%= render partial: 'tree', locals: {x:menu} %></ul>
+    <% end %>
+
+<br>
+
+<%= link_to 'New Menu', new_menu_path, class:"btn btn-primary" %>

@@ -28,7 +28,8 @@ class MenusController < ApplicationController
 
     respond_to do |format|
       if @menu.save
-        format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
+        random_variable = @menu.title
+        format.html { redirect_to @menu, notice: random_variable + ' was successfully created.' }
         format.json { render :show, status: :created, location: @menu }
       else
         format.html { render :new }
@@ -54,9 +55,10 @@ class MenusController < ApplicationController
   # DELETE /menus/1
   # DELETE /menus/1.json
   def destroy
+    the_destroyed = @menu.title
     @menu.destroy
     respond_to do |format|
-      format.html { redirect_to menus_url, notice: 'Menu was successfully destroyed.' }
+      format.html { redirect_to menus_url, notice: the_destroyed + ' was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

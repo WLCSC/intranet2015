@@ -7,18 +7,21 @@
 .row {
   text-align: left;
 }
-table tr:nth-child(odd) {
+.table-bordered tr:nth-child(odd) {
   color: #FF0000;
 }
-table tr:nth-child(even) {
+.table-bordered tr:nth-child(even) {
   color: #636363;
 }
-a tr:nth-child(odd) {
+.table-bordered a tr:nth-child(odd) {
   color: #FF0000;
 }
-a tr:nth-child(even) {
+.table-bordered a tr:nth-child(even) {
   color: #636363;
 }
-table th h3 {
+.table-bordered th {
   color: #636363;
+}
+.table-bordered {
+  border-collapse: collapse;
 }

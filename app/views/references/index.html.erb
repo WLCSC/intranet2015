@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @references.each do |reference| %>
+    <% @references.order(:title).each do |reference| %>
       <tr>
         <td><%= link_to reference.title, reference.url  %></td>
         <td><%= reference.username %></td>

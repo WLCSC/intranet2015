@@ -28,7 +28,8 @@ class ReferencesController < ApplicationController
 
     respond_to do |format|
       if @reference.save
-        format.html { redirect_to @reference, notice: 'Reference was successfully created.' }
+        a_random_variable = @reference.title
+        format.html { redirect_to @reference, notice: a_random_variable + ' was successfully created.' }
         format.json { render :show, status: :created, location: @reference }
       else
         format.html { render :new }
@@ -54,9 +55,10 @@ class ReferencesController < ApplicationController
   # DELETE /references/1
   # DELETE /references/1.json
   def destroy
+    another_random_variable = @reference.title
     @reference.destroy
     respond_to do |format|
-      format.html { redirect_to references_url, notice: 'Reference was successfully destroyed.' }
+      format.html { redirect_to references_url, notice: another_random_variable + ' was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

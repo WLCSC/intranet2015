@@ -7,3 +7,18 @@
 .row {
   text-align: left;
 }
+table tr:nth-child(odd) {
+  color: #FF0000;
+}
+table tr:nth-child(even) {
+  color: #636363;
+}
+a tr:nth-child(odd) {
+  color: #FF0000;
+}
+a tr:nth-child(even) {
+  color: #636363;
+}
+table th h4 {
+  color: #636363;
+}

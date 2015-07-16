@@ -1,17 +1,15 @@
-<h1><center>Welcome to the WLCSC Intranet!</center></h1>
-<br>
-<h2><center><strong>Notes</strong></center></h2>
+<h1>Welcome to the WLCSC Intranet!</h1>
 <br>
 <% @notes.in_groups_of(3) do |thing| %>
 <div class = "row">
   <% thing.each do |note| %>
     <% if note != nil %>
       <div class = "col-md-4">
-      <center><h4><%= note.title %></h4></center>
+      <h4><%= note.title %></h4>
       <% if note.created_at == note.updated_at %>
-        <center><h5>Created by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.created_at.strftime("%b %d, %Y at %I:%M %p") %></h5></center>
+        <h5>Created by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.created_at.strftime("%b %d, %Y at %I:%M %p") %></h5>
       <% else %>
-        <center><h5>Updated by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.updated_at.strftime("%b %d, %Y at %I:%M %p") %></h5></center>
+        <h5>Updated by <span class = "thing"><%= note.user_sid %></span> on:  <%= note.updated_at.strftime("%b %d, %Y at %I:%M %p") %></h5>
       <% end %>
       <p><%= note.content %></p>
     </div>
@@ -19,16 +17,15 @@
   <% end %>
 </div>
 <% end %>
-<h2><center><strong>References</strong></center></h2>
+<h2>References</h2>
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th><h3>Title</h3></th>
-      <th><h3>Username</h3></th>
-      <th><h3>Password</h3></th>
-      <th><h3>External</h3></th>
-      <th><h3>Notes</h3></th>
-      <th colspan="3"></th>
+      <th>Title</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>External</th>
+      <th>Notes</th>
     </tr>
   </thead>
 

@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'rails_bootstrap_navbar'
+gem 'activeldap', git: 'git://github.com/activeldap/activeldap'
+gem 'net-ldap'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -21,7 +21,17 @@
 }
 .table-bordered th {
   color: #636363;
+  text-align: center;
+  font-size: 1.1em;
 }
 .table-bordered {
   border-collapse: collapse;
+}
+
+.footer {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
 }

@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-  
+  before_action :check_for_admin
+
   # GET /notes
   # GET /notes.json
   def index
@@ -25,6 +26,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    @note.user_sid = current_user.sAMAccountName
 
     respond_to do |format|
       if @note.save

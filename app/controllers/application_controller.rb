@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= (session[:udn] ? User.find(session[:udn]) : nil)
+	if APP_CONFIG[:ignore_ldap]
+		@current_user = DummyUser.new
+	else
+		@current_user ||= (session[:udn] ? User.find(session[:udn]) : nil) 
+	end
   end
 
   def current_admin

@@ -14,7 +14,7 @@
 					<% Menu.where(menu_id: nil).order(:title).each do |menu| %>
 						<%= navbar_dropdown menu.title do %>
 <% menu.children.order(:title).each do |x| %>
-  <%= navbar_item(x.title, menu_path(x)) %>
+  <%= navbar_item(x.title, x.url) %>
 <% end %>
 <% end %>
 					<% end %>

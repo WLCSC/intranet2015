@@ -1,5 +1,6 @@
 class ReferencesController < ApplicationController
   before_action :set_reference, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_admin
 
   # GET /references
   # GET /references.json

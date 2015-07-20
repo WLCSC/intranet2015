@@ -29,5 +29,18 @@
 <% end %>
 <%= yield %>
 </div>
+<div class="container footer">
+  <% if current_admin %>
+    <%= link_to "Menu Editor", menus_path %>
+     -
+    <%= link_to "Notes Editor", notes_path %>
+     -
+    <%= link_to "Reference Editor", references_path %>
+     -
+    <%= link_to "Log Out", logout_path %>
+  <% else %>
+    <%= link_to "Log In", new_session_path %>
+  <% end %>
+</div>
 </body>
 </html>

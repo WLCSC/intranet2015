@@ -27,10 +27,12 @@
     <% x.destroy %>
   <% end %>
 <% end %>
+<div class="panel panel-default well well-lg">
 <%= yield %>
 </div>
+</div>
 <div class="container footer">
-  <% if current_admin %>
+  <% if current_user %>
     <%= link_to "Menu Editor", menus_path %>
      -
     <%= link_to "Notes Editor", notes_path %>

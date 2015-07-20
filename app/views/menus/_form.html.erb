@@ -21,7 +21,9 @@
   </div>
   <div class="field">
     <%= f.label :menu_id %><br>
-    <%= f.select(:menu_id, options_from_collection_for_select(Menu.all, 'id', 'title', @menu.menu_id), :include_blank => true) %>
+    <% @menus = Menu.all %>
+    <%  %>
+    <%= f.select(:menu_id, options_for_select(@menus.map { |m| [m.parenter, m.id]}), :include_blank => true) %>
   </div>
   <div class="actions">
     <br>

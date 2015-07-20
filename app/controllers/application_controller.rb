@@ -10,10 +10,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-	if APP_CONFIG[:ignore_ldap]
-		@current_user = DummyUser.new
+    puts 'called current user'
+	if APP_CONFIG['ignore_ldap']
+    puts 'Ignoring LDAP, logging in'
+		@current_user = Dummy.new
 	else
-		@current_user ||= (session[:udn] ? User.find(session[:udn]) : nil) 
+		@current_user ||= (session[:udn] ? User.find(session[:udn]) : nil)
 	end
   end
 
@@ -29,10 +31,10 @@ class ApplicationController < ActionController::Base
 
   private
   def check_for_user
-    redirect_to root_path, alert: "Please log in." unless APP_CONFIG[:ignore_ldap] || current_user
+    redirect_to root_path, alert: "Please log in." unless current_user
   end
 
   def check_for_admin
-    redirect_to root_path, alert: "You can't do that" unless APP_CONFIG[:ignore_ldap] || current_admin
+    redirect_to root_path, alert: "You can't do that" unless current_admin
   end
 end

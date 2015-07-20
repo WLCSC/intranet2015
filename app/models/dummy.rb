@@ -1,4 +1,4 @@
-class DummyUser
+class Dummy
 	def name
 		'Dummy'
 	end
@@ -8,6 +8,9 @@ class DummyUser
 	end
 
 	def admin?
-		APP_CONFIG[:ignore_ldap]
+		APP_CONFIG['ignore_ldap']
+	end
+	def sAMAccountName
+		'dummy'
 	end
 end

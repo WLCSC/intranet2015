@@ -16,6 +16,20 @@ class Menu < ActiveRecord::Base
     self.menu_id
   end
   def parent
-    Menu.find self.menu_id
+    if menu_id
+      Menu.find self.menu_id
+    else
+      nil
+    end
   end
+  def parenter
+    parents = ""
+    if self.parent != nil
+      parents = self.parent.parenter + " > " + title
+    else
+      parents = title
+    end
+    return parents
+  end
+  validates :title, presence: true
 end

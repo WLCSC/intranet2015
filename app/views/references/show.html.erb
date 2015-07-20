@@ -22,7 +22,11 @@
 
 <p>
   <strong>External:</strong>
-  <%= @reference.external %>
+  <% if @reference.external %>
+    <%= "Yes" %>
+  <% else %>
+    <%= "No" %>
+  <% end %>
 </p>
 
 <p>

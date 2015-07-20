@@ -1,7 +1,11 @@
 class MyValidator < ActiveModel::Validator
   def validate(menu)
-    unless menu.url.starts_with?('http') || menu.url.starts_with?('#')
-      menu.errors[:url]  << 'must start with http or #.'
+    unless (menu.url.starts_with?('http') || menu.url.starts_with?('#')) || (!(menu.parent))
+      if menu.url == ""
+        menu.errors[:url] << "must be filled in inside the field."
+      else
+        menu.errors[:url]  << 'must start with http or #.'
+      end
     end
   end
 end

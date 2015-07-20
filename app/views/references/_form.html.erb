@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, 'Title*' %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
+    <%= f.label :url, 'Url*' %>*<br>
     <%= f.text_field :url %>
   </div>
   <div class="field">
@@ -35,6 +35,8 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
+  <br>
+  <p>*You must fill in the fields with asterisks.</p>
   <br>
   <div class="actions">
     <%= f.submit nil, class:"btn btn-success" %>

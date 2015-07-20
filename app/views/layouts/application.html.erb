@@ -23,8 +23,10 @@
 		<% end %>
 <div class="container">
 <% @notes_stuff.each do |x| %>
-  <% if x.expires < DateTime.now %>
-    <% x.destroy %>
+  <% if x.expires != nil %>
+    <% if x.expires < DateTime.now %>
+      <% x.destroy %>
+    <% end %>
   <% end %>
 <% end %>
 <div class="panel panel-default well well-lg">

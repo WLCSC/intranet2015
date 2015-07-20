@@ -17,7 +17,11 @@
 
 <p>
   <strong>Expires:</strong>
-  <%= @note.expires.strftime("%b %d, %Y") %>
+  <% if @note.expires != nil %>
+    <%= @note.expires.strftime("%b %d, %Y") %>
+  <% else %>
+    <%= "" %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_note_path(@note), class: "btn btn-warning" %>

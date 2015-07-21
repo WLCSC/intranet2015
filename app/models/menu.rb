@@ -1,6 +1,6 @@
 class MyValidator < ActiveModel::Validator
   def validate(menu)
-    unless (menu.url.starts_with?('http') || menu.url.starts_with?('#')) || (!(menu.parent))
+    unless menu.url.starts_with?('http') || menu.url.starts_with?('#')
       if menu.url.present?
         menu.errors[:url] << ' must start with http or #.'
       else

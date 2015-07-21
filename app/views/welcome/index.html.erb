@@ -1,4 +1,21 @@
 <h1>Welcome to the WLCSC Intranet!</h1>
+<% if browser_is?('ie') %>
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" class = "text-warning">Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>Using Internet Explorer is not great for the Intranet.  You can continue, or use a different browser to access the Intranet.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<% end %>
 <br>
 <% @notes.in_groups_of(3) do |thing| %>
 <div class = "row">

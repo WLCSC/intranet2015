@@ -17,6 +17,6 @@
 
 <%= link_to 'Edit', edit_menu_path(@menu), class: "btn btn-warning"  %>
 <%= link_to 'Back', menus_path, class: "btn btn-primary" %>
-<% if @menu.parent %>
+<% if @menu.children.count == 0 %>
 <%= link_to 'Destroy', @menu, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"  %>
 <% end %>

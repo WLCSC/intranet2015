@@ -8,15 +8,19 @@
 </head>
 <body>
 <%= navbar inverse: true  do %>
-			<%= navbar_header brand: "Intranet " + image_tag("WL_Logo", height: "25px", style: "display: inline"), brand_link: root_url %>
+			<%= navbar_header brand: image_tag("WL_Logo", height: "25px", style: "display: inline") + " Intranet", brand_link: root_url %>
 			<%= navbar_collapse do %>
 				<%= navbar_group class: "foo", id: "menu" do %>
 					<% Menu.where(menu_id: nil).order(:title).each do |menu| %>
-						<%= navbar_dropdown menu.title do %>
-<% menu.children.order(:title).each do |x| %>
-  <%= navbar_item(x.title, x.url) %>
-<% end %>
-<% end %>
+            <% if menu.children.present? %>
+						  <%= navbar_dropdown menu.title do %>
+                <% menu.children.order(:title).each do |x| %>
+                  <%= navbar_item(x.title, x.url) %>
+                <% end %>
+              <% end %>
+            <% else %>
+                <%= navbar_item(menu.title, menu.url) %>
+            <% end %>
 					<% end %>
 				<% end %>
 			<% end %>
@@ -31,8 +35,7 @@
 <% end %>
 <div class="panel panel-default well well-lg">
 <%= yield %>
-</div>
-</div>
+<br>
 <div class="container footer">
   <% if current_user %>
     <%= link_to "Menu Editor", menus_path %>
@@ -45,6 +48,8 @@
   <% else %>
     <%= link_to "Log In", new_session_path %>
   <% end %>
+</div>
+</div>
 </div>
 </body>
 </html>

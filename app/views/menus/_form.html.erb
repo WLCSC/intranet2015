@@ -22,8 +22,7 @@
   <div class="field">
     <%= f.label :menu_id %><br>
     <% @menus = Menu.all %>
-    <%  %>
-    <%= f.select(:menu_id, options_for_select(@menus.map { |m| [m.parenter, m.id]}), :include_blank => true) %>
+    <%= f.select(:menu_id, options_for_select(@menus.map { |m| [m.parenter, m.id]}, selected = @menu.menu_id), :include_blank => true) %>
   </div>
   <br>
   <p>*You must fill in the fields with asterisks.</p>

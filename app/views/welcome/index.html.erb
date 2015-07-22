@@ -21,7 +21,6 @@
   });
 <% end %>
 <% end %>
-<pre><%= request.env['HTTP_USER_AGENT'].downcase %></pre>
 <% @notes.in_groups_of(3) do |thing| %>
 <div class = "row">
   <% thing.each do |note| %>

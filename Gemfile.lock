@@ -8,12 +8,6 @@ GIT
       gettext_i18n_rails
       locale
 
-GIT
-  remote: git://github.com/traction/browser_detect.git
-  revision: 8f5f2fe3dbb60db08a43cf65001550bb3b20aa4e
-  specs:
-    browser_detect (0.0.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -182,7 +176,6 @@ PLATFORMS
 DEPENDENCIES
   activeldap!
   bootstrap-sass
-  browser_detect!
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)

@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-ui-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'browser_detect', '~> 0.0.5'
+gem "browser_detect", :require => "browser_detect", :git => 'git://github.com/traction/browser_detect.git'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

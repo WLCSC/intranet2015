@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     @notes = Note.all
     @references = Reference.all
-    if browser_is?('ie')
+    if !request.env['HTTP_USER_AGENT'].downcase.match(/\).+\w+\/[0-9.]+/)
       @browsinger = true
     else
       @browsinger = false

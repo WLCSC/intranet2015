@@ -3,6 +3,6 @@ class Note < ActiveRecord::Base
   validate :expiration_date_cannot_be_in_the_past
   def expiration_date_cannot_be_in_the_past
     errors.add(:expires, "can't be today or in the past") if
-    !expires.blank? and expires <= Date.today
+    !expires.blank? && expires <= Date.today
   end
 end

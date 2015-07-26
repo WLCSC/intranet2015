@@ -21,6 +21,9 @@
   });
 <% end %>
 <% end %>
+<% if @notes.present? %>
+  <h2>Notes</h2>
+<% end %>
 <% @notes.in_groups_of(3) do |thing| %>
 <div class = "row">
   <% thing.each do |note| %>

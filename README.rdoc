@@ -5,6 +5,3 @@ This is the redesigned 2015 Intranet for West Lafayette Community School Corpora
 There are some gems and imported things, so running “bundle install” on the terminal should make everything work for you.
 
 This makes notes and holds references for the students in the school corporation.  The notes are notices intended for anyone in the school corporation which are made by faculty and can have expiration dates.  The references hold the name of an online reference site, a link to that site, the user name and password (if applicable) for the site, whether it can be accessed at home, and any extra notes about that specific site.  The menu can also be modified in the menu editor by faculty, and menu items can have links and parents.
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

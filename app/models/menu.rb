@@ -7,6 +7,9 @@ class MyValidator < ActiveModel::Validator
         menu.errors[:url]  << ' must be filled in.'
       end
     end
+    if /\s/.match(menu.url)
+      menu.errors[:url] << ' must not have any whitespace.'
+    end
   end
 end
 

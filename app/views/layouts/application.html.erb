@@ -8,7 +8,6 @@
 </head>
 <body>
 <%= navbar class: "navbar-static-top" do %>
-      <div class="textifier">
 			<%= navbar_header brand: image_tag("WL_Logo", height: "25px", style: "display: inline") + " Intranet", brand_link: root_url %>
 			<%= navbar_collapse do %>
 				<%= navbar_group class: "foo", id: "menu" do %>
@@ -23,9 +22,13 @@
                 <%= navbar_item(menu.title, menu.url) %>
             <% end %>
 					<% end %>
+          <% if current_user %>
+            <%= navbar_item("Menu Editor", menus_path) %>
+            <%= navbar_item("Notes Editor", notes_path) %>
+            <%= navbar_item("Reference Editor", references_path) %>
+          <% end %>
 				<% end %>
 			<% end %>
-    </div>
 		<% end %>
 <div class="container">
 <% @notes_stuff.each do |x| %>
@@ -40,12 +43,6 @@
 <br>
 <div class="container footer">
   <% if current_user %>
-    <%= link_to "Menu Editor", menus_path %>
-     -
-    <%= link_to "Notes Editor", notes_path %>
-     -
-    <%= link_to "Reference Editor", references_path %>
-     -
     <%= link_to "Log Out", logout_path %>
   <% else %>
     <%= link_to "Log In", new_session_path %>

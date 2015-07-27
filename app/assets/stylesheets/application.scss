@@ -54,6 +54,9 @@ body {
   background-color: silver;
   border-color: silver;
 }
-.textifier {
+.navbar-default .navbar-nav > li > a {
+  color: black;
+}
+.navbar-default .navbar-brand {
   color: black;
 }

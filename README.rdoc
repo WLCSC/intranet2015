@@ -1,6 +1,8 @@
-== README
+= About
 
 This is the redesigned 2015 Intranet for West Lafayette Community School Corporation.
+
+= Setup
 
 There are some gems and imported things, so running “bundle install” on the terminal should make everything work for you.
 

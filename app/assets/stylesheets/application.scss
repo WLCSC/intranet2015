@@ -36,12 +36,15 @@ body {
 background-color: #754b4a;
 background-image: asset-url("diagmonds-light.png")
 }
-**/
+
 body {
   background-color: #b3000e;
   background-image: asset-url("cubes.png")
 }
-
+**/
+body {
+  background-image: asset-url("footer_lodyas.png")
+}
 .main-container {
 	background-color: white;
 	padding: 20px;

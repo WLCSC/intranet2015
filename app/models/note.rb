@@ -5,4 +5,5 @@ class Note < ActiveRecord::Base
     errors.add(:expires, "can't be today or in the past") if
     !expires.blank? && expires <= Date.today
   end
+  validates :expires, date: true
 end

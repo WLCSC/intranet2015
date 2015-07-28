@@ -1,4 +1,4 @@
-APP_CONFIG = YAML.load_file(Rails.root.to_s + ('/config/app.yml'))[Rails.env]
+APP_CONFIG = YAML.load_file(Rails.root.to_s + ('/config/app.yml'))[Rails.env].with_indifferent_access
 
 unless APP_CONFIG[:ignore_ldap] == true
   require 'active_ldap'
